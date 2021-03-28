@@ -3,8 +3,8 @@ import Dallar from "./dallar";
 describe("다중 통화를 지원하는 Money 객체", () => {
   test("$5 * 2 = 10$ 테스트", () => {
     const five:Dallar = new Dallar(5);
-    five.times(2);
-    expect(five.amount).toBe(10);
+    const product = five.times(2);
+    expect(product.amount).toBe(10);
   });
   test("Dallar의 side-effect. 여러번 times 하는 테스트", () => {
     // Given
