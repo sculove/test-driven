@@ -18,5 +18,8 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     product = five.times(3);
     // Then
     expect(product.amount).toBe(15);
-  })
+  });
+  test("Dallar 비교 테스트", () => {
+    expect(new Dallar(5).equals(new Dallar(5)));
+  });
 });
