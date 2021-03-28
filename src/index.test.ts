@@ -5,12 +5,17 @@ import Franc from "./franc";
 describe("다중 통화를 지원하는 Money 객체", () => {
   test("비교 테스트", () => {
     expect(Money.dallar(5).equals(Money.franc(5))).toBeFalsy();
+    
+    // TODO: Null 이나 dallar가 아닌 object인 경우 추가 테스트가 필요함
+    expect(Money.dallar(5).equals(Money.dallar(5))).toBeTruthy();
+    expect(Money.dallar(5).equals(Money.dallar(6))).toBeFalsy();
+    expect(Money.franc(5).equals(Money.franc(5))).toBeTruthy();
+    expect(Money.franc(5).equals(Money.franc(6))).toBeFalsy();
   });
   test("통화 코드 확인 테스트", () => {
     expect(Money.dallar(1).currency()).toBe("USD");
     expect(Money.franc(1).currency()).toBe("CHF");
   })
-
   describe("Dallar 객체 테스트", () => {
     test("여러번 times 하는 테스트", () => {
       // Given
@@ -21,11 +26,6 @@ describe("다중 통화를 지원하는 Money 객체", () => {
       
       // When, Then
       expect(five.times(3).equals(Money.dallar(15))).toBeTruthy();
-    });
-    test("Dallar 비교 테스트", () => {
-      // TODO: Null 이나 dallar가 아닌 object인 경우 추가 테스트가 필요함
-      expect(Money.dallar(5).equals(Money.dallar(5))).toBeTruthy();
-      expect(Money.dallar(5).equals(Money.dallar(6))).toBeFalsy();
     });
   });
 
@@ -40,10 +40,6 @@ describe("다중 통화를 지원하는 Money 객체", () => {
       // When, Then
       expect(five.times(3).equals(Money.franc(15))).toBeTruthy();
     });
-    test("Franc 비교 테스트", () => {
-      // TODO: Null 이나 dallar가 아닌 object인 경우 추가 테스트가 필요함
-      expect(Money.franc(5).equals(Money.franc(5))).toBeTruthy();
-      expect(Money.franc(5).equals(Money.franc(6))).toBeFalsy();
-    });
+    
   })
 });
