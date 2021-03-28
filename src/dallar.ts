@@ -1,6 +1,5 @@
 class Dallar {
-  public amount: number;
-  constructor(amount: number) {
+  constructor(private amount: number) {
     this.amount = amount;
   }
   times(multiplier: number): Dallar {
