@@ -16,30 +16,21 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     expect(Money.dallar(1).currency()).toBe("USD");
     expect(Money.franc(1).currency()).toBe("CHF");
   })
-  describe("Dallar 객체 테스트", () => {
-    test("여러번 times 하는 테스트", () => {
-      // Given
-      const five:Dallar = Money.dallar(5);
-      
-      // When, Then
-      expect(five.times(2).equals(Money.dallar(10))).toBeTruthy();
-      
-      // When, Then
-      expect(five.times(3).equals(Money.dallar(15))).toBeTruthy();
-    });
-  });
-
-  describe("Franc 객체 테스트", () => {
-    test("여러번 times 하는 테스트", () => {
-      // Given
-      const five:Franc = Money.franc(5);
-      
-      // When, Then
-      expect(five.times(2).equals(Money.franc(10))).toBeTruthy();
-      
-      // When, Then
-      expect(five.times(3).equals(Money.franc(15))).toBeTruthy();
-    });
+  test("여러번 times 하는 테스트", () => {
+    // Given
+    const fiveDallar:Dallar = Money.dallar(5);
+    const fiveFranc:Franc = Money.franc(5);
     
-  })
+    // When, Then
+    expect(fiveDallar.times(2).equals(Money.dallar(10))).toBeTruthy();
+    
+    // When, Then
+    expect(fiveDallar.times(3).equals(Money.dallar(15))).toBeTruthy();
+
+    // When, Then
+    expect(fiveFranc.times(2).equals(Money.franc(10))).toBeTruthy();
+      
+    // When, Then
+    expect(fiveFranc.times(3).equals(Money.franc(15))).toBeTruthy();
+  });
 });
