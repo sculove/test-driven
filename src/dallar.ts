@@ -1,9 +1,10 @@
 class Dallar {
   public amount: number;
   constructor(amount: number) {
+    this.amount = amount;
   }
   times(mlutiplier: number) {
-    this.amount = 5 * 2;
+    this.amount *= mlutiplier;
   }
 };
 
