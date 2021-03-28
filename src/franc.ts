@@ -1,9 +1,8 @@
 import Money from "./money";
 
 class Franc extends Money {
-  constructor(amount: number) {
-    super(amount);
-    this.currencyValue = "CHF";
+  constructor(amount: number, currency = "CHF") {
+    super(amount, currency);
   }
   times(multiplier: number): Money {
     return new Franc(this.amount * multiplier);

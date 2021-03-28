@@ -1,6 +1,5 @@
 class Money {
-  protected currencyValue: string;
-  constructor(protected amount: number) {
+  constructor(protected amount: number, protected currencyValue: string) {
   }
   equals(money: Money) {
     return this.amount === money.amount && this.constructor.name == money.constructor.name;
