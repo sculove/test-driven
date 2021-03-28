@@ -16,6 +16,9 @@ class Money {
   times(multiplier: number) {
     return new Money(this.amount * multiplier, this.currencyValue);
   }
+  plus(addend: Money) {
+    return new Money(this.amount + addend.amount, this.currencyValue);
+  }
 }
 
 export default Money;
