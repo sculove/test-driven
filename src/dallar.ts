@@ -7,7 +7,7 @@ class Dallar {
     return new Dallar(this.amount * multiplier);
   }
   equals(dallar: Dallar) {
-    return true;
+    return this.amount === dallar.amount;
   }
 };
 
