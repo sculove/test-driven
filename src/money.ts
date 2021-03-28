@@ -1,4 +1,7 @@
 class Money {
+  static dallar(amount: number) {
+    return new Money(amount, "USD");
+  }
   constructor(protected amount: number, protected currencyValue: string) {
   }
   equals(money: Money) {
