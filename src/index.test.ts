@@ -1,6 +1,4 @@
 import Money from "./money";
-import Dallar from "./dallar";
-import Franc from "./franc";
 
 describe("다중 통화를 지원하는 Money 객체", () => {
   test("비교 테스트", () => {
@@ -18,8 +16,8 @@ describe("다중 통화를 지원하는 Money 객체", () => {
   })
   test("여러번 times 하는 테스트", () => {
     // Given
-    const fiveDallar:Dallar = Money.dallar(5);
-    const fiveFranc:Franc = Money.franc(5);
+    const fiveDallar = Money.dallar(5);
+    const fiveFranc = Money.franc(5);
     
     // When, Then
     expect(fiveDallar.times(2).equals(Money.dallar(10))).toBeTruthy();
