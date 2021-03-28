@@ -3,8 +3,8 @@ class Dallar {
   constructor(amount: number) {
     this.amount = amount;
   }
-  times(mlutiplier: number): Dallar {
-    return new Dallar(this.amount * mlutiplier);
+  times(multiplier: number): Dallar {
+    return new Dallar(this.amount * multiplier);
   }
 };
 
