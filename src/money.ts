@@ -8,7 +8,7 @@ class Money {
   constructor(protected amount: number, protected currencyValue: string) {
   }
   equals(money: Money) {
-    return this.amount === money.amount && this.constructor.name == money.constructor.name;
+    return this.amount === money.amount && this.currency() === money.currency();
   }
   currency(): string {
     return this.currencyValue;
