@@ -3,7 +3,7 @@ class Money {
 
   }
   equals(money: Money) {
-    return this.amount === money.amount;
+    return this.amount === money.amount && this.constructor.name == money.constructor.name;
   }
 }
 
