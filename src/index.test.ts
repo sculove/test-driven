@@ -20,6 +20,7 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     expect(product.amount).toBe(15);
   });
   test("Dallar 비교 테스트", () => {
+    // TODO: Null 이나 dallar가 아닌 object인 경우 추가 테스트가 필요함
     expect(new Dallar(5).equals(new Dallar(5)));
   });
 });
