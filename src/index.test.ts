@@ -31,11 +31,13 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     // When, Then
     expect(fiveFranc.times(3).equals(Money.franc(15))).toBeTruthy();
   });
-  test("동일 통화 더하기 테스트", () => {
+  test("통화 더하기 테스트", () => {
     // Given
+    const bank = new Bank();
     // When
     const sum = Money.dallar(5).plus(Money.dallar(5));
+    const reduced = bank.reduce(sum, "USD");
     // Then
-    expect(sum.equals(Money.dallar(10))).toBeTruthy();
+    expect(Money.dallar(10).equals(reduced)).toBeTruthy();
   })
 });
