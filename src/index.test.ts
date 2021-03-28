@@ -5,5 +5,18 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     const five:Dallar = new Dallar(5);
     five.times(2);
     expect(five.amount).toBe(10);
+  });
+  test("Dallar의 side-effect. 여러번 times 하는 테스트", () => {
+    // Given
+    const five:Dallar = new Dallar(5);
+    // When
+    let product = five.times(2);
+    // Then
+    expect(product.amount).toBe(10);
+    
+    // When
+    product = five.times(3);
+    // Then
+    expect(product.amount).toBe(15);
   })
 });
