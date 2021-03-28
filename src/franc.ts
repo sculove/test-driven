@@ -1,16 +1,16 @@
 import Money from "./money";
 
-class Dallar extends Money {
+class Franc extends Money {
   constructor(private amount: number) {
     super();
     this.amount = amount;
   }
-  times(multiplier: number): Dallar {
-    return new Dallar(this.amount * multiplier);
+  times(multiplier: number): Franc {
+    return new Franc(this.amount * multiplier);
   }
-  equals(dallar: Dallar) {
+  equals(dallar: Franc) {
     return this.amount === dallar.amount;
   }
 };
 
-export default Dallar;
+export default Franc;
