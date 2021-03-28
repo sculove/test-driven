@@ -4,7 +4,7 @@ class Dallar extends Money {
   constructor(amount: number) {
     super(amount);
   }
-  times(multiplier: number): Dallar {
+  times(multiplier: number): Money {
     return new Dallar(this.amount * multiplier);
   }
 };
