@@ -2,6 +2,10 @@ import Dallar from "./dallar";
 import Franc from "./franc";
 
 describe("다중 통화를 지원하는 Money 객체", () => {
+  test("비교 테스트", () => {
+    expect(new Dallar(5).equals(new Franc(5))).toBeFalsy();
+  });
+
   describe("Dallar 객체 테스트", () => {
     test("여러번 times 하는 테스트", () => {
       // Given
