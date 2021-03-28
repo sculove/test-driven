@@ -2,6 +2,9 @@ class Money {
   static dallar(amount: number) {
     return new Money(amount, "USD");
   }
+  static franc(amount: number) {
+    return new Money(amount, "CHF");
+  }
   constructor(protected amount: number, protected currencyValue: string) {
   }
   equals(money: Money) {
