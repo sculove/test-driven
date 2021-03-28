@@ -7,9 +7,6 @@ class Dallar extends Money {
   times(multiplier: number): Dallar {
     return new Dallar(this.amount * multiplier);
   }
-  equals(dallar: Dallar) {
-    return this.amount === dallar.amount;
-  }
 };
 
 export default Dallar;

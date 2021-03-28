@@ -7,9 +7,6 @@ class Franc extends Money {
   times(multiplier: number): Franc {
     return new Franc(this.amount * multiplier);
   }
-  equals(dallar: Franc) {
-    return this.amount === dallar.amount;
-  }
 };
 
 export default Franc;
