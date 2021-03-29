@@ -20,7 +20,7 @@ class Money implements Expression {
   times(multiplier: number) {
     return new Money(this.amount * multiplier, this.currencyValue);
   }
-  plus(addend: Money) {
+  plus(addend: Expression) {
     return new Sum(this, addend);
   }
   reduce(bank: Bank, currency: string) {
