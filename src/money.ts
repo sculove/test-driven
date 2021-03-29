@@ -21,6 +21,9 @@ class Money implements Expression {
   plus(addend: Money) {
     return new Sum(this, addend);
   }
+  reduce(currency: string) {
+    return this;
+  }
 }
 
 export default Money;

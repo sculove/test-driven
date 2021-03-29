@@ -1,10 +1,8 @@
-import Expression, { Sum } from "./expression";
-import Money from "./money";
+import Expression from "./expression";
 
 class Bank {
   reduce(value: Expression, currency: string) {
-    const source: Sum = <Sum>value;
-    return source.reduce(currency);
+    return value.reduce(currency);
   }
 }
 

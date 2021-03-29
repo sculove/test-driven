@@ -1,6 +1,8 @@
 import Money from "./money";
 
-interface Expression {}
+interface Expression {
+  reduce(currency: string): Money;
+}
 
 export class Sum implements Expression {
   constructor(public augend: Money, public addend: Money) {
