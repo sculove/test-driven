@@ -84,5 +84,16 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     // When
     // Then
     expect(bank.rate("USD", "XXX")).toBe(1);
+  });
+  test("서로 다른 통화 더하기 테스트", () => {
+    // Given
+    const fiveDallar = Money.dallar(5);
+    const tenFranc = Money.franc(10);
+    const bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    // When
+    const result = bank.reduce(fiveDallar.plus(tenFranc), "USD");
+    // Then
+    expect(Money.dallar(10).equals(result)).toBeTruthy();
   })
 });
