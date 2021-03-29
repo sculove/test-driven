@@ -14,7 +14,6 @@ class Sum implements Expression {
     return new Sum(this, addend);
   }
   times(multiplier: number) {
-    // @ts-ignore
     return new Sum(this.augend.times(multiplier), this.addend.times(multiplier))
   }
 }
