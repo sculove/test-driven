@@ -1,4 +1,5 @@
-import Expression, {Sum} from "./expression";
+import Expression from "./expression";
+import Sum from "./sum";
 
 class Money implements Expression {
   static dallar(amount: number) {

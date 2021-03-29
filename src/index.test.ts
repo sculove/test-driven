@@ -1,6 +1,6 @@
 import Money from "./money";
 import Bank from "./bank";
-import { Sum } from "./expression";
+import Sum from "./sum";
 
 describe("다중 통화를 지원하는 Money 객체", () => {
   test("비교 테스트", () => {
