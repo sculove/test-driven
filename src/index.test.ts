@@ -77,5 +77,12 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     const result = bank.reduce(Money.franc(2), "USD");
     // Then
     expect(Money.dallar(1).equals(result)).toBeTruthy();
+  });
+  test("rate가 존재하지 않는 경우 테스트", () => {
+    // Given 
+    const bank = new Bank();
+    // When
+    // Then
+    expect(bank.rate("USD", "XXX")).toBe(1);
   })
 });
