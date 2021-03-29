@@ -59,5 +59,14 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     const result = bank.reduce(sum, "USD");
     // Then
     expect(Money.dallar(7).equals(result)).toBeTruthy();
-  })
+  });
+  test("Money인 경우에 대한 reduce 테스트", () => {
+    // Given
+    const bank = new Bank();
+    const money = Money.dallar(1);
+    // When
+    const result = bank.reduce(money, "USD");
+    // Then
+    expect(money.equals(result)).toBeTruthy();
+  });
 });
