@@ -95,5 +95,17 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     const result = bank.reduce(fiveDallar.plus(tenFranc), "USD");
     // Then
     expect(Money.dallar(10).equals(result)).toBeTruthy();
-  })
+  });
+  test("sum의 plus 테스트", () => {
+    // Given
+    const fiveDallar = Money.dallar(5);
+    const tenFranc = Money.franc(10);
+    const bank = new Bank();
+    bank.addRate("CHF", "USD", 2);
+    // When
+    const sum = new Sum(fiveDallar, tenFranc).plus(fiveDallar);
+    const result = bank.reduce(sum, "USD");
+    // Then
+    expect(Money.dallar(15).equals(result)).toBeTruthy();
+  });
 });
