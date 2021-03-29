@@ -1,4 +1,4 @@
-import Expression from "./expression";
+import Expression, {Sum} from "./expression";
 
 class Money implements Expression {
   static dallar(amount: number) {
@@ -19,7 +19,7 @@ class Money implements Expression {
     return new Money(this.amount * multiplier, this.currencyValue);
   }
   plus(addend: Money) {
-    return new Money(this.amount + addend.amount, this.currencyValue);
+    return new Sum(this, addend);
   }
 }
 
