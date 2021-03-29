@@ -1,5 +1,6 @@
 import Expression from "./expression";
 import Sum from "./sum";
+import Bank from "./bank";
 
 class Money implements Expression {
   static dallar(amount: number) {
@@ -22,8 +23,8 @@ class Money implements Expression {
   plus(addend: Money) {
     return new Sum(this, addend);
   }
-  reduce(currency: string) {
-    const rate = this.currencyValue === "CHF" && currency === "USD" ? 2 : 1
+  reduce(bank: Bank, currency: string) {
+    const rate = bank.rate(this.currencyValue, currency);
     return new Money(this.amount / rate, currency);
   }
 }
