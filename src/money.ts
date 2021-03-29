@@ -1,4 +1,6 @@
-class Money {
+import Expression from "./expression";
+
+class Money implements Expression {
   static dallar(amount: number) {
     return new Money(amount, "USD");
   }
