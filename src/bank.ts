@@ -11,7 +11,7 @@ class Bank {
     this.table.set(`${from}_${to}`, rate);
   }
   rate(from:string, to:string) {
-    return this.table.get(`${from}_${to}`);
+    return this.table.get(`${from}_${to}`) ?? 1;
   }
 }
 
