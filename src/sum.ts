@@ -10,6 +10,9 @@ class Sum implements Expression {
     const amount = this.augend.reduce(bank, currency).amount + this.addend.reduce(bank, currency).amount;
     return new Money(amount, currency);
   }
+  plus(addend: Expression) {
+    return new Sum(this, addend);
+  }
 }
 
 export default Sum;
