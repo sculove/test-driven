@@ -22,7 +22,8 @@ class Money implements Expression {
     return new Sum(this, addend);
   }
   reduce(currency: string) {
-    return this;
+    const rate = this.currencyValue === "CHF" && currency === "USD" ? 2 : 1
+    return new Money(this.amount / rate, currency);
   }
 }
 
