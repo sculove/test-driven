@@ -1,5 +1,6 @@
 import Money from "./money";
 import Bank from "./bank";
+import { Sum } from "./expression";
 
 describe("다중 통화를 지원하는 Money 객체", () => {
   test("비교 테스트", () => {
@@ -50,4 +51,13 @@ describe("다중 통화를 지원하는 Money 객체", () => {
     expect(five.equals(result.augend)).toBeTruthy();
     expect(five.equals(result.addend)).toBeTruthy();
   });
+  test("동일 통화 연산, 동일 통화 반환 reduce 테스트", () => {
+    // Given
+    const bank = new Bank();
+    const sum = new Sum(Money.dallar(3), Money.dallar(4));
+    // When 
+    const result = bank.reduce(sum, "USD");
+    // Then
+    expect(Money.dallar(7).equals(result)).toBeTruthy();
+  })
 });
