@@ -11,9 +11,12 @@ class Money implements Expression {
   }
   constructor(protected amountValue: number, protected currencyValue: string) {
   }
-  equals(money: Money) {
+  toString() {
+    return `${this.amount()}_${this.currency()}`;
+  }
+  equals(money: Expression) {
     // https://www.typescriptlang.org/docs/handbook/2/classes.html#cross-instance-private-access
-    return this.amount() === money.amount() && this.currency() === money.currency();
+    return this.toString() === money.toString();
   }
   amount(): number {
     return this.amountValue;
