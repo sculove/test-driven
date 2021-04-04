@@ -1,3 +1,5 @@
+import WasRun from "./wasRun";
+
 describe("xUnit 개발", () => {
   test("테스트 호출 여부 확인하기", () => {
     // Given
