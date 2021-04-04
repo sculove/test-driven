@@ -1,6 +1,11 @@
 class TestClass {
+  public wasSetup:boolean;
   constructor(protected name:string) {};
-  run() { 
+  setup() {
+    this.wasSetup = true;
+  }
+  run() {
+    this.setup(); 
     // @ts-ignore
     this[this.name]();
   }
