@@ -1,12 +1,11 @@
-class WasRun {
+import TestCase from "./testCase";
+class WasRun extends TestCase{
   public wasRun:boolean;
-  constructor(private target: string) {}
+  constructor(private target: string) {
+    super(target);
+  }
   testMethod() { 
     this.wasRun = true;
-  }
-  run() { 
-    // @ts-ignore
-    this[this.target]();
   }
 }
 
