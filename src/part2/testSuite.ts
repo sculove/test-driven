@@ -2,8 +2,9 @@ import TestCase from "./testCase";
 import TestResult from "./testResult";
 
 class TestSuite {
+  private tests:TestCase[] = [];
   add(testCase: TestCase) {
-
+    this.tests.push(testCase);
   }
   run() {
     const result = new TestResult();
