@@ -32,5 +32,13 @@ describe("xUnit 개발", () => {
     const result = test.run();
     // Then
     expect(result.summary()).toBe("1 run, 0 failed");
+  });
+  test("실패하는 결과 테스트", () => {
+    // Given
+    const test = new WasRun("testFailMethod");
+    // When
+    const result = test.run();
+    // Then
+    expect(result.summary()).toBe("1 run, 1 failed");
   })
 });
