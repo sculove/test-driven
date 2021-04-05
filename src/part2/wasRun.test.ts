@@ -25,4 +25,12 @@ describe("xUnit 개발", () => {
     test.run();
     expect(test.log).toBe("setUp testMethod tearDown");
   });
+  test("테스트 결과 테스트", () => {
+    // Given
+    const test = new WasRun("testMethod");
+    // When
+    const result = test.run();
+    // Then
+    expect(result.summary()).toBe("1 run, 0 failed");
+  })
 });
