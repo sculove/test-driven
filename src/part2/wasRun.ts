@@ -6,6 +6,9 @@ class WasRun extends TestCase{
   testMethod() { 
   
   }
+  testFailMethod() {
+    throw new Error("error");
+  }
 }
 
 export default WasRun;
