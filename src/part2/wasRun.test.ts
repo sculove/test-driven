@@ -1,3 +1,4 @@
+import TestSuite from "./testSuite";
 import WasRun from "./wasRun";
 
 describe("xUnit 개발", () => {
