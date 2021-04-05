@@ -10,8 +10,7 @@ class TestClass {
     this.wasRun = false;
     this.log = "setUp ";
   }
-  run() {
-    const result = new TestResult();
+  run(result: TestResult) {
     this.setup(); 
     try{
       this.wasRun = true;
