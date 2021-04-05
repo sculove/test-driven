@@ -1,3 +1,5 @@
+import TestResult from "./testResult";
+
 class TestClass {
   public wasRun:boolean;
   public wasSetup:boolean;
@@ -15,6 +17,7 @@ class TestClass {
     this.wasRun = true;
     this.log += this.name;
     this.tearDown();
+    return new TestResult();
   }
   tearDown() {
     this.log += " tearDown";
