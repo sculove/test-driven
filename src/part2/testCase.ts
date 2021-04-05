@@ -1,16 +1,23 @@
 class TestClass {
   public wasRun:boolean;
   public wasSetup:boolean;
+  public log:string;
   constructor(protected name:string) {};
   setup() {
     this.wasSetup = true;
     this.wasRun = false;
+    this.log = "setUp ";
   }
   run() {
     this.setup(); 
-    this.wasRun = true;
     // @ts-ignore
     this[this.name]();
+    this.wasRun = true;
+    this.log += this.name;
+    this.tearDown();
+  }
+  tearDown() {
+    this.log += " tearDown";
   }
 }
 
