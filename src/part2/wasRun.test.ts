@@ -18,4 +18,11 @@ describe("xUnit 개발", () => {
     // Then
     expect(test.wasSetup).toBeTruthy();
   });
+  test("teardown 호출 순서 테스트", () => {
+    // Given 
+    const test = new WasRun("testMethod");
+    // When
+    test.run();
+    expect(test.log).toBe("setUp testMethod tearDown");
+  });
 });
