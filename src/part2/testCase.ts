@@ -11,13 +11,15 @@ class TestClass {
     this.log = "setUp ";
   }
   run() {
+    const result = new TestResult();
     this.setup(); 
     // @ts-ignore
     this[this.name]();
     this.wasRun = true;
+    result.testStarted();
     this.log += this.name;
     this.tearDown();
-    return new TestResult();
+    return result;
   }
   tearDown() {
     this.log += " tearDown";

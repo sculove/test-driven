@@ -1,6 +1,11 @@
 class TestResult {
+  public runCount:number = 0;
+
+  testStarted() {
+    this.runCount++;
+  }
   summary() {
-    return "1 run, 0 failed";
+    return `${this.runCount} run, 0 failed`;
   }
 }
 
