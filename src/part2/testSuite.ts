@@ -6,11 +6,10 @@ class TestSuite {
   add(testCase: TestCase) {
     this.tests.push(testCase);
   }
-  run() {
-    const result = new TestResult();
-    result.testStarted();
-    result.testStarted();
-    result.testFailed();
+  run(result: TestResult) {
+    this.tests.forEach((t:TestCase) => {
+      t.run(result);
+    });
     return result;
   }
 }

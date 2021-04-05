@@ -49,7 +49,7 @@ describe("xUnit 개발", () => {
     suite.add(new WasRun("testMethod"));
     suite.add(new WasRun("testFailMethod"));
     // When
-    const result = suite.run();
+    const result = suite.run(new TestResult());
     // Then
     expect(result.summary()).toBe("2 run, 1 failed");
   })
