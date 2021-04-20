@@ -1,4 +1,4 @@
-import { TInvoice, TPerformance, TPlay } from "./model";
+import { PLAYS, TInvoice, TPerformance, TPlay } from "./model";
 
 export function statement(invoice:TInvoice, plays: Record<string, TPlay>) {
   let totalAmount = 0;
@@ -11,7 +11,7 @@ export function statement(invoice:TInvoice, plays: Record<string, TPlay>) {
   }).format;
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
+    const play = playFor(perf);
     let thisAmount = amountFor(play, perf); // Refactoring - VSCODE : module 범위의 function으로 추출
     // 포인트를 적립한다.
     volumeCredits += Math.max(perf.audience - 30, 0);
@@ -25,6 +25,10 @@ export function statement(invoice:TInvoice, plays: Record<string, TPlay>) {
   result += `총액: ${format(totalAmount/100)}\n`;
   result += `적립 포인트: ${volumeCredits}점\n`;
   return result;
+}
+
+function playFor(perf: TPerformance) {
+  return PLAYS[perf.playID];
 }
 
 // Refactoring - 명확한 이름으로 바꾸기 (F2)
