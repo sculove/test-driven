@@ -11,7 +11,7 @@ export function statement(invoice:TInvoice, plays: Record<string, TPlay>) {
   }).format;
 
   for (let perf of invoice.performances) {
-    let thisAmount = amountFor(playFor(perf), perf); // Refactoring - VSCODE : module 범위의 function으로 추출
+    let thisAmount = amountFor(perf); // Refactoring - VSCODE : module 범위의 function으로 추출
     // 포인트를 적립한다.
     volumeCredits += Math.max(perf.audience - 30, 0);
     // 희극 관객 5명마다 추가 포인트를 제공한다.
@@ -31,10 +31,11 @@ function playFor(perf: TPerformance) {
 }
 
 // Refactoring - 명확한 이름으로 바꾸기 (F2)
-function amountFor(play: TPlay, performance: TPerformance) {
+// Refactoring - 함수 선언 바꾸기
+function amountFor(performance: TPerformance) {
   let result = 0;
 
-  switch (play.type) {
+  switch (playFor(performance).type) {
     case "tragedy": // 비극
       result = 40000;
       if (performance.audience > 30) {
@@ -49,7 +50,7 @@ function amountFor(play: TPlay, performance: TPerformance) {
       result += 300 * performance.audience;
       break;
     default:
-      throw new Error(`알 수 없는 장르: ${play.type}`);
+      throw new Error(`알 수 없는 장르: ${playFor(performance).type}`);
   }
   return result;
 }
