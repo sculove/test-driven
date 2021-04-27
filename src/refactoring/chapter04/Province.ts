@@ -22,6 +22,10 @@ export default class Province {
   get totalProduction() { return this._totalProduction}
   set totalProduction(arg) { this._totalProduction = arg}
   get demand() { return this._demand}
+  set demand(arg) { 
+    // @ts-ignore
+    this._demand = parseInt(arg, 10)
+  }
   get price() { return this._price}
   
   get shortfall() {
