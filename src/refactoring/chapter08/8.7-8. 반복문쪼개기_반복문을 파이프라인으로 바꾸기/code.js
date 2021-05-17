@@ -14,12 +14,13 @@ function acquireData(input) {
     .filter(line => line.trim() !== "")
     .map(line => line.split(","))
     .filter(record => record[1].trim() == "India")
-  for(const line of lines) {
-    const record = line;
-    result.push({
+    .map(record => ({
       city: record[0].trim(),
       phone: record[2].trim()
-    });
+    }))
+  for(const line of lines) {
+    const record = line;
+    result.push(record);
   }
   return result;
 }
