@@ -11,6 +11,7 @@ function acquireData(input) {
   const lines = input.split("\n");
   let firstLine = true;
   const result = [];
+  const loopItems = lines;
   for(const line of lines) {
     if(firstLine) {
       firstLine = false;
