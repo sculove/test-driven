@@ -10,9 +10,9 @@
 function acquireData(input) {
   const lines = input.split("\n");
   const result = [];
-  const loopItems = lines.slice(1);
+  const loopItems = lines.slice(1)
+    .filter(line => line.trim() !== "")
   for(const line of lines) {
-    if(line.trim() === "") continue;
     const record = line.split(",");
     if(record[1].trim() == "India") {
       result.push({
