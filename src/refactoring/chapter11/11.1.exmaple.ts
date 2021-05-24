@@ -10,17 +10,7 @@ function findMiscreant(people) {
 }
 
 function alertMiscreant(people) {
-  for(const p of people) {
-    if(p === "조커") {
-      setOffAlarm();
-      return;
-    }
-    if(p === "사루만") {
-      setOffAlarm();
-      return;
-    }
-  }
+  if(findMiscreant(people) !== "") setOffAlarm();
 }
 
-const found = findMiscreant(people);
 alertMiscreant(people);
